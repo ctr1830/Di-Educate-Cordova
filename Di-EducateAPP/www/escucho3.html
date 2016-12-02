@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+    	<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+         <meta http-equiv="Content-Security-Policy" content="media-src 'self' https://dl.dropboxusercontent.com;
+   															connect-src http://u017633.ehu.eus:28080;"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-2.0.2.js"></script>    	
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        
+    </head>
+    <body>
+<div data-role="page" id="escucho3" style="align-items: center;">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Escucho mi voz 3</h1>
+	</div>
+   <div id="cuento" style="display: block">
+		<h2 id="enunciado" style="text-align: center"></h2>
+		<div class="wrapper" style="display: block; text-align: center;">
+			<div class="imagewrap" style="display:inline-block;position:relative;">
+			<br/>
+			<input id="audio0" type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/cuento.mp3')"/>
+				<div style="text-align:center;">
+					<br/><br/>
+					<a href="" id="adelante" class="ui-btn ui-btn-inline ui-corner-all" onclick="adelante()">Adelante</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="EJ31" style="display: none">
+		<div class="wrapper" style="display: block; text-align: center;">
+			<div class="imagewrap" style="display:inline-block;position:relative;">
+			<br/>
+			<input id="audio1" type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/1.mp3')"/>
+			<div class="wrapper" style="display: block; text-align: center;">
+				<div class="imagewrap" style="display:inline-block;position:relative;">
+					<div id="cont1" style="display: inline-block; padding: 20px;">
+				   		<img id="img1" src="img/mu.jpg" width="150px" height="150px" onclick="valor11('muu')">
+				   	</div>
+				   	<div id="cont2" style="display: inline-block; padding: 20px;">
+				   		<img id="img2" src="img/guau.jpg" width="150px" height="150px" onclick="valor11('guau')">
+				   	</div>
+				   	<div style="text-align:center;">
+						<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkEscucho(2)">Comprobar</a>
+					</div>
+			   	</div>
+		   	</div>
+		   	</div>
+		</div>
+	</div>
+	<div id="EJ32" style="display: none">
+		<div class="wrapper" style="display: block; text-align: center;">
+			<div class="imagewrap" style="display:inline-block;position:relative;">
+			<br/>
+			<input id="audio2" type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/2.mp3')"/>
+			<div class="wrapper" style="display: block; text-align: center;">
+				<div class="imagewrap" style="display:inline-block;position:relative;">
+					<div id="cont1" style="display: inline-block; padding: 20px;">
+				   		<img id="img3"src="img/guau.jpg" width="150px" height="150px" onclick="valor12('guau')">	
+				   	</div>
+				   	<div id="cont2" style="display: inline-block; padding: 20px;">
+				   		<img id="img4"src="img/plash.jpg" width="150px" height="150px" onclick="valor12('plash')">
+				   	</div>
+				   	<div style="text-align:center;">
+						<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkEscucho(2)">Comprobar</a>
+					</div>
+			   	</div>
+		   	</div>
+		   	</div>
+		</div>
+	</div>
+    <div id="EJ33" style="display: none">
+		<div class="wrapper" style="display: block; text-align: center;">
+			<div class="imagewrap" style="display:inline-block;position:relative;">
+			<br/>
+			<input id="audio3"type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/3.mp3')"/>
+			<div class="wrapper" style="display: block; text-align: center;">
+				<div class="imagewrap" style="display:inline-block;position:relative;">
+					<div id="cont1" style="display: inline-block; padding: 20px;">
+				   		<img id="img5"src="img/run.jpg" width="150px" height="150px" onclick="valor13('run')">
+				   	</div>
+				   	<div id="cont2" style="display: inline-block; padding: 20px;">
+				   		<img id="img6"src="img/ring.jpg" width="150px" height="150px" onclick="valor13('ring')">
+				   	</div>
+				   	<div style="text-align:center;">
+						<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkEscucho(2)">Comprobar</a>
+					</div>
+			   	</div>
+		   	</div>
+		   	</div>
+		</div>
+	</div>
+  	<div id="EJ34" style="display: none">
+		<div class="wrapper" style="display: block; text-align: center;">
+			<div class="imagewrap" style="display:inline-block;position:relative;">
+			<br/>
+			<input id="audio4"type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/4.mp3')"/>
+			<div class="wrapper" style="display: block; text-align: center;">
+				<div class="imagewrap" style="display:inline-block;position:relative;">
+					<div id="cont1" style="display: inline-block; padding: 20px;">
+				   		<img id="img7" src="img/guau.jpg" width="150px" height="150px" onclick="valor14('guau')">
+				   	</div>
+				   	<div id="cont2" style="display: inline-block; padding: 20px;">
+				   		<img id="img8"src="img/muack.jpg" width="150px" height="150px" onclick="valor14('muack')">
+				   	</div>
+				   	<div style="text-align:center;">
+						<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkEscucho(2)">Comprobar</a>
+					</div>
+			   	</div>
+		   	</div>
+		   	</div>
+		</div>
+	</div>
+	<div id="EJ35" style="display: none">
+		<div class="wrapper" style="display: block; text-align: center;">
+			<div class="imagewrap" style="display:inline-block;position:relative;">
+			<br/>
+			<input id="audio5"type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/5.mp3')"/>
+			<div class="wrapper" style="display: block; text-align: center;">
+				<div class="imagewrap" style="display:inline-block;position:relative;">
+					<div id="cont1" style="display: inline-block; padding: 20px;">
+				   		<img id="img9"src="img/boing.jpg" width="150px" height="150px" onclick="valor15('boing')">
+				   	</div>
+				   	<div id="cont2" style="display: inline-block; padding: 20px;">
+				   		<img id="img10" src="img/ring.jpg" width="150px" height="150px" onclick="valor15('ring')">
+				   	</div>
+				   	<div style="text-align:center;">
+						<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkEscucho(2)">Comprobar</a>
+					</div>
+			   	</div>
+		   	</div>
+		   	</div>
+		</div>
+	</div>
+	<div id="EJ36" style="display: none">
+		<div class="wrapper" style="display: block; text-align: center;">
+			<div class="imagewrap" style="display:inline-block;position:relative;">
+			<br/>
+			<input id="audio6"type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/6.mp3')"/>
+			<div class="wrapper" style="display: block; text-align: center;">
+				<div class="imagewrap" style="display:inline-block;position:relative;">
+					<div id="cont1" style="display: inline-block; padding: 20px;">
+				   		<img id="img11"src="img/ring.jpg" width="150px" height="150px" onclick="valor16('ring')">
+				   	</div>
+				   	<div id="cont2" style="display: inline-block; padding: 20px;">
+				   		<img id="img12"src="img/mu.jpg" width="150px" height="150px" onclick="valor16('mu')">
+				   	</div>
+				   	<div style="text-align:center;">
+						<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkEscucho(2)">Comprobar</a>
+					</div>
+			   	</div>
+		   	</div>
+		   	</div>
+		</div>
+	</div>
+	<div class="wrapper" id="ayuda3" style="text-align: center; display: none; width: 100%; position: absolute;">
+		<div >
+			<h1 style="text-align: center;">Pide ayuda a alquien que tengas cerca</h1>
+		</div>
+		<div>
+			<br/><br/><br/>
+			<img src="img/ayuda.gif" style="text-align: center">
+		</div>
+	</div>
+	<div class="wrapper" id="correcto3" style="text-align: center; display: none; width: 100%; position: absolute;">
+		<div >
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<img src="img/correct.gif" style="text-align: center">
+		</div>
+	</div>
+	<div data-role="footer" id="footer-0" data-position="fixed" data-tap-toggle="false">
+		<h4 id="footer_leoleo">Di-Educate</h4>
+		<h4 id="footer_usuario" style="margin-left:0;"></h4>
+		<a href="escucho_menu.html" id="atras" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left">Atrás</a>
+	</div>
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/objects.js"></script>  
+        <script type="text/javascript" src="js/functions.js"></script>              
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+<script>
+	requestEscucho(8);
+	var nombre= localStorage.getItem("username"); 
+	document.getElementById("footer_usuario").innerHTML ="Usuario: " + nombre;
+	
+	function valor11(valor11){
+		localStorage.setItem("valor11",valor11);
+	}
+	function valor12(valor12){
+		localStorage.setItem("valor12",valor12);
+	}
+	function valor13(valor13){
+		localStorage.setItem("valor13",valor13);
+	}
+	function valor14(valor14){
+		localStorage.setItem("valor14",valor14);
+	}
+	function valor15(valor15){
+		localStorage.setItem("valor15",valor15);
+	}
+	function valor16(valor16){
+		localStorage.setItem("valor16",valor16);
+	}
+	setTimeout(function(){playAudio("/android_asset/www/audio/enunciado.mp3")},1000);
+</script>

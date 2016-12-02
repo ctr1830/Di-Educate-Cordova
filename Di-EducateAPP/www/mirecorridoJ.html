@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+    	<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+       <meta http-equiv="Content-Security-Policy" content="media-src 'self' https://dl.dropboxusercontent.com;
+   															connect-src http://u017633.ehu.eus:28080;"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-2.0.2.js"></script>    	
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        
+    </head>
+    <body>
+<div data-role="page" id="mi_recorrido" style="align-items: center;">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Mi recorrido</h1>
+	</div>
+   <div class="wrapper" style="display: block; text-align: center;">
+	<div class="imagewrap" style="display:inline-block;position:relative;">
+	    <img src="img/avanza.gif">
+	    <h2>Juego con las palabras 1:</h2>
+		<h2 id="Ej1" style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;"></h2>
+		<h2>Juego con las palabras 2:</h2>
+		<h2 id="Ej2" style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;"></h2>
+	    </div>
+    </div>
+    <div data-role="footer" id="footer-0" data-position="fixed" data-tap-toggle="false">
+		<h4 id="footer_submenu">Di-Educate</h4>
+		<h4 id="footer_usuario" style="margin-left:0;"></h4>
+		<a href="juego_menu.html" id="atras" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left">Atrás</a>
+	</div>
+</div>
+
+   	    <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/objects.js"></script>  
+        <script type="text/javascript" src="js/functions.js"></script>              
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+<script>
+		var nombre= localStorage.getItem("username"); 
+		$("#footer_usuario").text ("Usuario: " + nombre);
+		requestCalification(2);
+		var juego1=localStorage.getItem("juego1");
+		var juego2=localStorage.getItem("juego2");
+		$("#Ej1").text(juego1);
+		$("#Ej2").text(juego2);	
+	
+</script>

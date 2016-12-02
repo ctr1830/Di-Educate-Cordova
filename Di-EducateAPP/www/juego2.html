@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+    	<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="media-src 'self' https://dl.dropboxusercontent.com;
+   															connect-src http://u017633.ehu.eus:28080;"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-2.0.2.js"></script>    	
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        
+    </head>
+    <body>
+<div data-role="page" id="juego1" style="align-items: center;">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Juego con las palabras 2</h1>
+	</div>
+   <div id="EJ1" style="display: block">
+	<div class="wrapper" id="ejercicio1" style="text-align: center; display: block; width: 100%; position: absolute; top: 30%;">
+		<div id="cont1" style="display: inline-block; padding: 20px;">	
+		<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Explanado - Plano</h1>
+		<button id="pla" onclick="valor9('pla')">Pla</button>
+		<button id="no" onclick="valor9('no')">No</button>
+		<button id="la" onclick="valor9('la')">La</button>
+	    </div>
+    </div>
+	<div style="text-align:center;">
+		<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego(1,0)">Comprobar</a>
+	</div>
+   </div>
+   <div id="EJ2" style="display: none">
+	<div class="wrapper" id="ejercicio1" style="text-align: center; display: block; width: 100%; position: absolute; top: 30%;">
+		<div id="cont2" style="display: inline-block; padding: 20px;">	
+		<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Elefante - Fantasma</h1>
+		<button id="ele" onclick="valor9('ele')">Ele</button>
+		<button id="ma" onclick="valor9('ma')">Ma</button>
+		<button id="fan" onclick="valor9('fan')">Fan</button>
+	    </div>
+    </div>
+	<div style="text-align:center;">
+		<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego(1,0)">Comprobar</a>
+	</div>
+   </div>
+   <div id="EJ3" style="display: none">
+	<div class="wrapper" id="ejercicio1" style="text-align: center; display: block; width: 100%; position: absolute; top: 30%;">
+		<div id="cont3" style="display: inline-block; padding: 20px;">	
+		<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Estuche - Túnica</h1>
+		<button id="ca" onclick="valor9('ca')">Ca</button>
+		<button id="tu" onclick="valor9('tu')">Tu</button>
+		<button id="es" onclick="valor9('es')">Es</button>
+	    </div>
+    </div>
+	<div style="text-align:center;">
+		<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkJuego(1,0)">Comprobar</a>
+	</div>
+   </div>
+	<div class="wrapper" id="ayuda2" style="text-align: center; display: none; width: 100%; position: absolute;">
+		<div >
+			<h1 style="text-align: center;">Pide ayuda a alquien que tengas cerca</h1>
+		</div>
+		<div>
+			<br/><br/><br/>
+			<img src="img/ayuda.gif" style="text-align: center">
+		</div>
+	</div>
+	<div class="wrapper" id="correcto2" style="text-align: center; display: none; width: 100%; position: absolute;">
+		<div >
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<img src="img/correct.gif" style="text-align: center">
+		</div>
+	</div>
+	<div data-role="footer" id="footer-0" data-position="fixed" data-tap-toggle="false">
+		<h4 id="footer_leoleo">Di-Educate</h4>
+		<h4 id="footer_usuario" style="margin-left:0;"></h4>
+		<a href="juego_menu.html" id="atras" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left">Atrás</a>
+	</div>
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/objects.js"></script>  
+        <script type="text/javascript" src="js/functions.js"></script>              
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+<script>
+	requestJuego(5);
+	var ejercicio=JSON.parse(localStorage.getItem("exercises"));
+	var nombre= localStorage.getItem("username"); 
+	document.getElementById("footer_usuario").innerHTML ="Usuario: " + nombre;
+	setTimeout(function(){playAudio(ejercicio.juego[1].audio[0])},1000);
+	function valor9(valor9){
+		localStorage.setItem("valor9",valor9);
+	}
+</script>

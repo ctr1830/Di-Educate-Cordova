@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-2.0.2.js"></script>    	
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+    	<div data-role="header" data-position="fixed" >
+				<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Di-Educate</h1>
+		</div>
+		<div>
+    	<img src="img/fondo.jpg" style="width:auto%; height:100%;" >
+	    <div class="wrapper" style="text-align: center; display: block; width: 100%; position: absolute; top: 40%;" >
+		    <a href="login.html" id="button_login" class="ui-btn ui-corner-all">Iniciar Sesión</a>
+		    <a href="newaccount.html" id="button_new_account" class="ui-btn ui-corner-all">Crear Cuenta</a>
+		</div>
+		</div>
+		<div data-role="footer" data-position="fixed"> 
+		</div>
+		
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script> 
+        <script type="text/javascript" src="js/functions.js"></script>
+        <script type="text/javascript" src="js/objects.js"></script>               
+        
+    </body>
+</html>

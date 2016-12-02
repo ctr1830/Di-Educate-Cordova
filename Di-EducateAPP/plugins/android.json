@@ -1,0 +1,37 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-screen-orientation": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educatev1"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educatev1"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educatev1"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educate"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educate"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educate"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educatev1"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "eus.ehu.intel.tta.di_educatev1"
+        }
+    }
+}

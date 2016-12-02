@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    	<link rel="stylesheet" href="http://code.ionicframework.com/1.0.0/css/ionic.css" />
+    	<script src="http://code.ionicframework.com/1.0.0/js/ionic.bundle.js"></script>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="media-src 'self' https://dl.dropboxusercontent.com;
+   															connect-src http://u017633.ehu.eus:28080;"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-2.0.2.js"></script>    	
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        
+    </head>
+    <body>
+<div data-role="page" id="escucho2" style="align-items: center;">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false" >
+		<h1 style="margin-left:0;margin-right:0;white-space: nowrap;overflow: visible;">Escucho mi voz 2</h1>
+	</div>
+   <div id="EJ1" style="display: block">
+		<input id="audio1" type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/clavito.mp3')"/>
+		<br/><br/>
+		<h2 style="text-align: center">Pablito clavo un clavito. ¿Qué __________ clavo Pablito?</h2>
+	</div>
+     <div id="EJ2" style="display: none">
+		<input id="audio2" type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/tigres.mp3')"/>
+		<br/><br/>
+		<h2 style="text-align: center">Tres tristes __________ trigaban trigo en un trigal</h2>
+	</div>
+   <div id="EJ3" style="display: none">
+		<input id="audio3" type="image" src="img/audio.png" onclick="playAudio('/android_asset/www/audio/cielo.mp3')"/>
+		<br/><br/>
+		<h2 style="text-align: center">El cielo esta enladrillado. ¿Quién lo desenladrillará? El _____________ que lo desenladrille, buen desenladrillador será</h2>
+	</div>
+	<div id="entrada">
+		<input type="text" id="input"><br>
+	</div>
+	<div id="boton" style="text-align:center; display: block">
+		<a href="" id="comprobar" class="ui-btn ui-btn-inline ui-corner-all" onclick="checkEscucho(1)">Comprobar</a>
+	</div>
+	<div class="wrapper" id="ayuda2" style="text-align: center; display: none; width: 100%; position: absolute;">
+		<div >
+			<h1 style="text-align: center;">Pide ayuda a alquien que tengas cerca</h1>
+		</div>
+		<div>
+			<br/><br/><br/>
+			<img src="img/ayuda.gif" style="text-align: center">
+		</div>
+	</div>
+	<div class="wrapper" id="correcto2" style="text-align: center; display: none; width: 100%; position: absolute;">
+		<div >
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+			<img src="img/correct.gif" style="text-align: center">
+		</div>
+	</div>
+	<div data-role="footer" id="footer-0" data-position="fixed" data-tap-toggle="false">
+		<h4 id="footer_leoleo">Di-Educate</h4>
+		<h4 id="footer_usuario" style="margin-left:0;"></h4>
+		<a href="escucho_menu.html" id="atras" class="ui-btn ui-mini ui-corner-all ui-icon-arrow-l ui-btn-icon-left">Atrás</a>
+	</div>
+</div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/objects.js"></script>  
+        <script type="text/javascript" src="js/functions.js"></script>              
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
+<script>
+	requestEscucho(7);
+	var nombre= localStorage.getItem("username"); 
+	document.getElementById("footer_usuario").innerHTML ="Usuario: " + nombre;
+</script>
